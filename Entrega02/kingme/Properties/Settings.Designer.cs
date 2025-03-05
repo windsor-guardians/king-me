@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Entrega01.Properties
+namespace kingme.Properties
 {
 
 
