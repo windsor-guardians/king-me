@@ -16,6 +16,7 @@ namespace kingme
         public NewGame()
         {
             InitializeComponent();
+            lblVersion.Text = Jogo.versao;
         }
 
         private void btnCreateNewMatch_Click(object sender, EventArgs e)

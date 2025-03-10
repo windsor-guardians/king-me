@@ -18,10 +18,12 @@ namespace kingme
         public string playerPass { get; set; }
         public string matchId { get; set; }
         private string[] matchPlayersList { get; set; }
+        private string[] characterList { get; set; }
         public Game()
         {
             InitializeComponent();
             listCharacters();
+            lblVersion.Text = Jogo.versao;
         }
 
         public void updateGameContent()
@@ -51,7 +53,7 @@ namespace kingme
                 return;
             }
 
-            MessageBox.Show(inicio, "Inicio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("A partida foi iniciada!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             btnInitializeMatch.Enabled = false;
         }
@@ -106,13 +108,11 @@ namespace kingme
 
         private void btnListCards_Click(object sender, EventArgs e)
         {
-            string cards = Jogo.ListarCartas(Convert.ToInt32(txtPlayerId.Text), txtPlayerPassword.Text);
-            if (errorPopUpGenerate(cards))
+            string playerCards = listPlayerCards();
+            if (playerCards.Contains("Error")) 
             {
                 return;
             }
-
-            lblCardsContent.Text = cards;
         }
 
         public bool errorPopUpGenerate(string content)
@@ -130,19 +130,44 @@ namespace kingme
         private void listCharacters()
         {
             string characters = Jogo.ListarPersonagens();
-            string[] characterList = characters.Split('\n');
+            this.characterList = characters.Split('\n');
             
-            for (int i = 0; i < characterList.Length - 1; i++)
+            for (int i = 0; i < this.characterList.Length - 1; i++)
             {
-                string character = characterList[i];
+                string character = this.characterList[i];
                 lstFavorites.Items.Add(character);
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLeave_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private string listPlayerCards()
+        {
+            string playerCards = Jogo.ListarCartas(Convert.ToInt32(txtPlayerId.Text), txtPlayerPassword.Text);
+
+            if (errorPopUpGenerate(playerCards))
+            {
+                return "Error";
+            }
+
+            char[] listPlayerCards = playerCards.ToCharArray();
+            
+            for (int i = 0; i < listPlayerCards.Length - 1; i++)
+            {
+                char cardPrefix = listPlayerCards[i];
+                foreach (string character in this.characterList)
+                {
+                  if (character.StartsWith(cardPrefix.ToString()))
+                    {
+                        lstCards.Items.Add(character);
+                    }
+                }
+            }
+
+            return "Cartas listadas";
+        }
     }
 }

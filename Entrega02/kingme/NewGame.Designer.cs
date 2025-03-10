@@ -39,6 +39,8 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblTeam = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.lstMatchesTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,11 +69,11 @@
             // 
             this.lblGroupNameMatch.AutoSize = true;
             this.lblGroupNameMatch.BackColor = System.Drawing.Color.Transparent;
-            this.lblGroupNameMatch.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroupNameMatch.ForeColor = System.Drawing.Color.White;
+            this.lblGroupNameMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGroupNameMatch.ForeColor = System.Drawing.Color.Black;
             this.lblGroupNameMatch.Location = new System.Drawing.Point(431, 279);
             this.lblGroupNameMatch.Name = "lblGroupNameMatch";
-            this.lblGroupNameMatch.Size = new System.Drawing.Size(98, 20);
+            this.lblGroupNameMatch.Size = new System.Drawing.Size(97, 13);
             this.lblGroupNameMatch.TabIndex = 21;
             this.lblGroupNameMatch.Text = "Nome do grupo:";
             // 
@@ -87,11 +89,11 @@
             // 
             this.lblPasswordMatch.AutoSize = true;
             this.lblPasswordMatch.BackColor = System.Drawing.Color.Transparent;
-            this.lblPasswordMatch.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordMatch.ForeColor = System.Drawing.Color.White;
+            this.lblPasswordMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordMatch.ForeColor = System.Drawing.Color.Black;
             this.lblPasswordMatch.Location = new System.Drawing.Point(431, 227);
             this.lblPasswordMatch.Name = "lblPasswordMatch";
-            this.lblPasswordMatch.Size = new System.Drawing.Size(48, 20);
+            this.lblPasswordMatch.Size = new System.Drawing.Size(47, 13);
             this.lblPasswordMatch.TabIndex = 19;
             this.lblPasswordMatch.Text = "Senha:";
             // 
@@ -107,12 +109,12 @@
             // 
             this.lblNameMatch.AutoSize = true;
             this.lblNameMatch.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameMatch.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameMatch.ForeColor = System.Drawing.Color.White;
+            this.lblNameMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameMatch.ForeColor = System.Drawing.Color.Black;
             this.lblNameMatch.Location = new System.Drawing.Point(431, 180);
             this.lblNameMatch.Name = "lblNameMatch";
             this.lblNameMatch.Padding = new System.Windows.Forms.Padding(0, 0, 91, 0);
-            this.lblNameMatch.Size = new System.Drawing.Size(195, 20);
+            this.lblNameMatch.Size = new System.Drawing.Size(195, 13);
             this.lblNameMatch.TabIndex = 17;
             this.lblNameMatch.Text = "Nome da partida:";
             // 
@@ -148,11 +150,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(299, 508);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(242, 508);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 25);
+            this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 38;
             this.label5.Text = "Versão:";
             // 
@@ -160,20 +162,46 @@
             // 
             this.lblTeam.AutoSize = true;
             this.lblTeam.BackColor = System.Drawing.Color.Transparent;
-            this.lblTeam.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeam.ForeColor = System.Drawing.Color.White;
+            this.lblTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblTeam.ForeColor = System.Drawing.Color.Black;
             this.lblTeam.Location = new System.Drawing.Point(97, 508);
             this.lblTeam.Name = "lblTeam";
-            this.lblTeam.Size = new System.Drawing.Size(176, 25);
+            this.lblTeam.Size = new System.Drawing.Size(114, 13);
             this.lblTeam.TabIndex = 37;
             this.lblTeam.Text = "Windsor Guardians";
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.BackColor = System.Drawing.Color.Transparent;
+            this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblVersion.ForeColor = System.Drawing.Color.Black;
+            this.lblVersion.Location = new System.Drawing.Point(298, 508);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(0, 13);
+            this.lblVersion.TabIndex = 39;
+            // 
+            // lstMatchesTitle
+            // 
+            this.lstMatchesTitle.AutoSize = true;
+            this.lstMatchesTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lstMatchesTitle.Font = new System.Drawing.Font("Old English Text MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstMatchesTitle.ForeColor = System.Drawing.Color.Black;
+            this.lstMatchesTitle.Location = new System.Drawing.Point(429, 129);
+            this.lstMatchesTitle.Name = "lstMatchesTitle";
+            this.lstMatchesTitle.Size = new System.Drawing.Size(163, 32);
+            this.lstMatchesTitle.TabIndex = 40;
+            this.lstMatchesTitle.Text = "Informações";
             // 
             // NewGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::kingme.Properties.Resources.wood;
+            this.BackgroundImage = global::kingme.Properties.Resources.texture1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 542);
+            this.Controls.Add(this.lstMatchesTitle);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblTeam);
             this.Controls.Add(this.btnBack);
@@ -187,6 +215,7 @@
             this.Controls.Add(this.lblNameMatch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(816, 542);
+            this.MinimumSize = new System.Drawing.Size(800, 542);
             this.Name = "NewGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewGame";
@@ -208,5 +237,7 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblTeam;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.Label lstMatchesTitle;
     }
 }

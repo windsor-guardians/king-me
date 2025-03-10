@@ -17,6 +17,7 @@ namespace kingme
         {
             InitializeComponent();
             listMatches();
+            lblVersion.Text = Jogo.versao;
         }
 
         private void listMatches()
