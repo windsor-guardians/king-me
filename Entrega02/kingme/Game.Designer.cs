@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstFavorites = new System.Windows.Forms.ListBox();
             this.lblCardsTitle = new System.Windows.Forms.Label();
             this.btnListCards = new System.Windows.Forms.Button();
             this.lblCardsContent = new System.Windows.Forms.Label();
@@ -83,24 +82,29 @@
             this.btnHeredia = new System.Windows.Forms.Button();
             this.btnDouglas = new System.Windows.Forms.Button();
             this.btnMario = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pboSetorUm = new System.Windows.Forms.PictureBox();
+            this.pboSetorZero = new System.Windows.Forms.PictureBox();
+            this.pboSetorDois = new System.Windows.Forms.PictureBox();
+            this.pboSetorCinco = new System.Windows.Forms.PictureBox();
+            this.pboSetorTres = new System.Windows.Forms.PictureBox();
+            this.pboSetorQuatro = new System.Windows.Forms.PictureBox();
+            this.pboSetorDez = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorUm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorZero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorDois)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorCinco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorTres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorQuatro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorDez)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstFavorites
-            // 
-            this.lstFavorites.FormattingEnabled = true;
-            this.lstFavorites.Location = new System.Drawing.Point(1110, 777);
-            this.lstFavorites.Name = "lstFavorites";
-            this.lstFavorites.Size = new System.Drawing.Size(283, 212);
-            this.lstFavorites.TabIndex = 41;
             // 
             // lblCardsTitle
             // 
             this.lblCardsTitle.AutoSize = true;
             this.lblCardsTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblCardsTitle.Font = new System.Drawing.Font("Old English Text MT", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblCardsTitle.Location = new System.Drawing.Point(1105, 611);
+            this.lblCardsTitle.Location = new System.Drawing.Point(963, 600);
             this.lblCardsTitle.Name = "lblCardsTitle";
             this.lblCardsTitle.Size = new System.Drawing.Size(127, 26);
             this.lblCardsTitle.TabIndex = 42;
@@ -112,7 +116,7 @@
             this.btnListCards.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnListCards.Font = new System.Drawing.Font("Old English Text MT", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnListCards.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnListCards.Location = new System.Drawing.Point(1406, 645);
+            this.btnListCards.Location = new System.Drawing.Point(1264, 634);
             this.btnListCards.Name = "btnListCards";
             this.btnListCards.Size = new System.Drawing.Size(169, 40);
             this.btnListCards.TabIndex = 43;
@@ -134,7 +138,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Old English Text MT", 15.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(1105, 46);
+            this.label2.Location = new System.Drawing.Point(963, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 26);
             this.label2.TabIndex = 48;
@@ -167,7 +171,7 @@
             // lstCards
             // 
             this.lstCards.FormattingEnabled = true;
-            this.lstCards.Location = new System.Drawing.Point(1108, 645);
+            this.lstCards.Location = new System.Drawing.Point(966, 634);
             this.lstCards.Name = "lstCards";
             this.lstCards.Size = new System.Drawing.Size(283, 95);
             this.lstCards.TabIndex = 51;
@@ -303,7 +307,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Old English Text MT", 15.75F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(1608, 612);
+            this.label3.Location = new System.Drawing.Point(1466, 601);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 26);
             this.label3.TabIndex = 53;
@@ -315,7 +319,7 @@
             this.btnSetCharacter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSetCharacter.Font = new System.Drawing.Font("Old English Text MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetCharacter.ForeColor = System.Drawing.Color.White;
-            this.btnSetCharacter.Location = new System.Drawing.Point(1783, 645);
+            this.btnSetCharacter.Location = new System.Drawing.Point(1641, 634);
             this.btnSetCharacter.Name = "btnSetCharacter";
             this.btnSetCharacter.Size = new System.Drawing.Size(108, 57);
             this.btnSetCharacter.TabIndex = 54;
@@ -331,7 +335,7 @@
             "3",
             "2",
             "1"});
-            this.lstSections.Location = new System.Drawing.Point(1610, 645);
+            this.lstSections.Location = new System.Drawing.Point(1468, 634);
             this.lstSections.Name = "lstSections";
             this.lstSections.Size = new System.Drawing.Size(147, 95);
             this.lstSections.TabIndex = 55;
@@ -342,7 +346,7 @@
             this.btnVerifyTurn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVerifyTurn.Font = new System.Drawing.Font("Old English Text MT", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnVerifyTurn.ForeColor = System.Drawing.Color.White;
-            this.btnVerifyTurn.Location = new System.Drawing.Point(1406, 701);
+            this.btnVerifyTurn.Location = new System.Drawing.Point(1264, 690);
             this.btnVerifyTurn.Name = "btnVerifyTurn";
             this.btnVerifyTurn.Size = new System.Drawing.Size(169, 39);
             this.btnVerifyTurn.TabIndex = 57;
@@ -366,7 +370,7 @@
             this.lblIdPlayerTurn.AutoSize = true;
             this.lblIdPlayerTurn.BackColor = System.Drawing.Color.Transparent;
             this.lblIdPlayerTurn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdPlayerTurn.Location = new System.Drawing.Point(18, 604);
+            this.lblIdPlayerTurn.Location = new System.Drawing.Point(22, 602);
             this.lblIdPlayerTurn.Name = "lblIdPlayerTurn";
             this.lblIdPlayerTurn.Size = new System.Drawing.Size(101, 20);
             this.lblIdPlayerTurn.TabIndex = 59;
@@ -412,7 +416,7 @@
             this.btnBeatrizPaiva.FlatAppearance.BorderSize = 0;
             this.btnBeatrizPaiva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBeatrizPaiva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBeatrizPaiva.Location = new System.Drawing.Point(22, 25);
+            this.btnBeatrizPaiva.Location = new System.Drawing.Point(22, 28);
             this.btnBeatrizPaiva.Name = "btnBeatrizPaiva";
             this.btnBeatrizPaiva.Size = new System.Drawing.Size(98, 139);
             this.btnBeatrizPaiva.TabIndex = 63;
@@ -432,21 +436,16 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.rdoRanulfo);
-            this.groupBox1.Controls.Add(this.rdoQuintas);
-            this.groupBox1.Controls.Add(this.rdoToshio);
             this.groupBox1.Controls.Add(this.rdoLeonardo);
+            this.groupBox1.Controls.Add(this.rdoKelly);
             this.groupBox1.Controls.Add(this.rdoGuilherme);
             this.groupBox1.Controls.Add(this.rdoEduardo);
-            this.groupBox1.Controls.Add(this.rdoKelly);
-            this.groupBox1.Controls.Add(this.rdoClaro);
-            this.groupBox1.Controls.Add(this.rdoAdilson);
-            this.groupBox1.Controls.Add(this.rdoHeredia);
-            this.groupBox1.Controls.Add(this.rdoDouglas);
+            this.groupBox1.Controls.Add(this.rdoBeatriz);
             this.groupBox1.Controls.Add(this.rdoMario);
-            this.groupBox1.Controls.Add(this.btnRanulfo);
-            this.groupBox1.Controls.Add(this.btnQuintas);
-            this.groupBox1.Controls.Add(this.btnToshio);
+            this.groupBox1.Controls.Add(this.rdoDouglas);
+            this.groupBox1.Controls.Add(this.rdoAdilson);
+            this.groupBox1.Controls.Add(this.rdoClaro);
+            this.groupBox1.Controls.Add(this.rdoHeredia);
             this.groupBox1.Controls.Add(this.btnLeonardo);
             this.groupBox1.Controls.Add(this.btnKelly);
             this.groupBox1.Controls.Add(this.btnGuilherme);
@@ -456,21 +455,26 @@
             this.groupBox1.Controls.Add(this.btnHeredia);
             this.groupBox1.Controls.Add(this.btnDouglas);
             this.groupBox1.Controls.Add(this.btnMario);
-            this.groupBox1.Controls.Add(this.rdoBeatriz);
             this.groupBox1.Controls.Add(this.btnBeatrizPaiva);
+            this.groupBox1.Controls.Add(this.rdoRanulfo);
+            this.groupBox1.Controls.Add(this.rdoQuintas);
+            this.groupBox1.Controls.Add(this.rdoToshio);
+            this.groupBox1.Controls.Add(this.btnToshio);
+            this.groupBox1.Controls.Add(this.btnQuintas);
+            this.groupBox1.Controls.Add(this.btnRanulfo);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(1108, 77);
+            this.groupBox1.ForeColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Location = new System.Drawing.Point(966, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(783, 523);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Personagens";
             // 
             // rdoRanulfo
             // 
             this.rdoRanulfo.AutoSize = true;
             this.rdoRanulfo.BackColor = System.Drawing.Color.Transparent;
-            this.rdoRanulfo.Location = new System.Drawing.Point(106, 349);
+            this.rdoRanulfo.Location = new System.Drawing.Point(106, 350);
             this.rdoRanulfo.Name = "rdoRanulfo";
             this.rdoRanulfo.Size = new System.Drawing.Size(14, 13);
             this.rdoRanulfo.TabIndex = 87;
@@ -503,7 +507,7 @@
             // 
             this.rdoLeonardo.AutoSize = true;
             this.rdoLeonardo.BackColor = System.Drawing.Color.Transparent;
-            this.rdoLeonardo.Location = new System.Drawing.Point(525, 190);
+            this.rdoLeonardo.Location = new System.Drawing.Point(514, 190);
             this.rdoLeonardo.Name = "rdoLeonardo";
             this.rdoLeonardo.Size = new System.Drawing.Size(14, 13);
             this.rdoLeonardo.TabIndex = 84;
@@ -514,7 +518,7 @@
             // 
             this.rdoGuilherme.AutoSize = true;
             this.rdoGuilherme.BackColor = System.Drawing.Color.Transparent;
-            this.rdoGuilherme.Location = new System.Drawing.Point(258, 190);
+            this.rdoGuilherme.Location = new System.Drawing.Point(249, 190);
             this.rdoGuilherme.Name = "rdoGuilherme";
             this.rdoGuilherme.Size = new System.Drawing.Size(14, 13);
             this.rdoGuilherme.TabIndex = 83;
@@ -536,7 +540,7 @@
             // 
             this.rdoKelly.AutoSize = true;
             this.rdoKelly.BackColor = System.Drawing.Color.Transparent;
-            this.rdoKelly.Location = new System.Drawing.Point(393, 190);
+            this.rdoKelly.Location = new System.Drawing.Point(382, 190);
             this.rdoKelly.Name = "rdoKelly";
             this.rdoKelly.Size = new System.Drawing.Size(14, 13);
             this.rdoKelly.TabIndex = 82;
@@ -547,7 +551,7 @@
             // 
             this.rdoClaro.AutoSize = true;
             this.rdoClaro.BackColor = System.Drawing.Color.Transparent;
-            this.rdoClaro.Location = new System.Drawing.Point(751, 28);
+            this.rdoClaro.Location = new System.Drawing.Point(751, 25);
             this.rdoClaro.Name = "rdoClaro";
             this.rdoClaro.Size = new System.Drawing.Size(14, 13);
             this.rdoClaro.TabIndex = 81;
@@ -558,7 +562,7 @@
             // 
             this.rdoAdilson.AutoSize = true;
             this.rdoAdilson.BackColor = System.Drawing.Color.Transparent;
-            this.rdoAdilson.Location = new System.Drawing.Point(635, 28);
+            this.rdoAdilson.Location = new System.Drawing.Point(635, 25);
             this.rdoAdilson.Name = "rdoAdilson";
             this.rdoAdilson.Size = new System.Drawing.Size(14, 13);
             this.rdoAdilson.TabIndex = 80;
@@ -569,7 +573,7 @@
             // 
             this.rdoHeredia.AutoSize = true;
             this.rdoHeredia.BackColor = System.Drawing.Color.Transparent;
-            this.rdoHeredia.Location = new System.Drawing.Point(525, 28);
+            this.rdoHeredia.Location = new System.Drawing.Point(514, 25);
             this.rdoHeredia.Name = "rdoHeredia";
             this.rdoHeredia.Size = new System.Drawing.Size(14, 13);
             this.rdoHeredia.TabIndex = 79;
@@ -580,7 +584,7 @@
             // 
             this.rdoDouglas.AutoSize = true;
             this.rdoDouglas.BackColor = System.Drawing.Color.Transparent;
-            this.rdoDouglas.Location = new System.Drawing.Point(393, 25);
+            this.rdoDouglas.Location = new System.Drawing.Point(382, 25);
             this.rdoDouglas.Name = "rdoDouglas";
             this.rdoDouglas.Size = new System.Drawing.Size(14, 13);
             this.rdoDouglas.TabIndex = 78;
@@ -591,7 +595,7 @@
             // 
             this.rdoMario.AutoSize = true;
             this.rdoMario.BackColor = System.Drawing.Color.Transparent;
-            this.rdoMario.Location = new System.Drawing.Point(258, 25);
+            this.rdoMario.Location = new System.Drawing.Point(249, 25);
             this.rdoMario.Name = "rdoMario";
             this.rdoMario.Size = new System.Drawing.Size(14, 13);
             this.rdoMario.TabIndex = 77;
@@ -606,7 +610,7 @@
             this.btnRanulfo.FlatAppearance.BorderSize = 0;
             this.btnRanulfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRanulfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRanulfo.Location = new System.Drawing.Point(22, 349);
+            this.btnRanulfo.Location = new System.Drawing.Point(22, 350);
             this.btnRanulfo.Name = "btnRanulfo";
             this.btnRanulfo.Size = new System.Drawing.Size(98, 139);
             this.btnRanulfo.TabIndex = 76;
@@ -690,7 +694,7 @@
             this.btnEduardo.FlatAppearance.BorderSize = 0;
             this.btnEduardo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEduardo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEduardo.Location = new System.Drawing.Point(22, 187);
+            this.btnEduardo.Location = new System.Drawing.Point(22, 190);
             this.btnEduardo.Name = "btnEduardo";
             this.btnEduardo.Size = new System.Drawing.Size(98, 139);
             this.btnEduardo.TabIndex = 70;
@@ -704,7 +708,7 @@
             this.btnClaro.FlatAppearance.BorderSize = 0;
             this.btnClaro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClaro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClaro.Location = new System.Drawing.Point(667, 28);
+            this.btnClaro.Location = new System.Drawing.Point(667, 26);
             this.btnClaro.Name = "btnClaro";
             this.btnClaro.Size = new System.Drawing.Size(98, 139);
             this.btnClaro.TabIndex = 69;
@@ -732,7 +736,7 @@
             this.btnHeredia.FlatAppearance.BorderSize = 0;
             this.btnHeredia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnHeredia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeredia.Location = new System.Drawing.Point(430, 28);
+            this.btnHeredia.Location = new System.Drawing.Point(430, 25);
             this.btnHeredia.Name = "btnHeredia";
             this.btnHeredia.Size = new System.Drawing.Size(98, 139);
             this.btnHeredia.TabIndex = 67;
@@ -766,13 +770,75 @@
             this.btnMario.TabIndex = 65;
             this.btnMario.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // pboSetorUm
             // 
-            this.panel1.BackgroundImage = global::kingme.Properties.Resources.tabuleiro1;
-            this.panel1.Location = new System.Drawing.Point(280, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 929);
-            this.panel1.TabIndex = 66;
+            this.pboSetorUm.BackgroundImage = global::kingme.Properties.Resources.setor1;
+            this.pboSetorUm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pboSetorUm.Location = new System.Drawing.Point(449, 729);
+            this.pboSetorUm.Name = "pboSetorUm";
+            this.pboSetorUm.Size = new System.Drawing.Size(406, 141);
+            this.pboSetorUm.TabIndex = 66;
+            this.pboSetorUm.TabStop = false;
+            // 
+            // pboSetorZero
+            // 
+            this.pboSetorZero.BackgroundImage = global::kingme.Properties.Resources.setor0;
+            this.pboSetorZero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pboSetorZero.Location = new System.Drawing.Point(449, 870);
+            this.pboSetorZero.Name = "pboSetorZero";
+            this.pboSetorZero.Size = new System.Drawing.Size(406, 125);
+            this.pboSetorZero.TabIndex = 67;
+            this.pboSetorZero.TabStop = false;
+            // 
+            // pboSetorDois
+            // 
+            this.pboSetorDois.BackgroundImage = global::kingme.Properties.Resources.setor2;
+            this.pboSetorDois.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pboSetorDois.Location = new System.Drawing.Point(449, 588);
+            this.pboSetorDois.Name = "pboSetorDois";
+            this.pboSetorDois.Size = new System.Drawing.Size(406, 141);
+            this.pboSetorDois.TabIndex = 68;
+            this.pboSetorDois.TabStop = false;
+            // 
+            // pboSetorCinco
+            // 
+            this.pboSetorCinco.BackgroundImage = global::kingme.Properties.Resources.setor5;
+            this.pboSetorCinco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pboSetorCinco.Location = new System.Drawing.Point(449, 165);
+            this.pboSetorCinco.Name = "pboSetorCinco";
+            this.pboSetorCinco.Size = new System.Drawing.Size(406, 141);
+            this.pboSetorCinco.TabIndex = 71;
+            this.pboSetorCinco.TabStop = false;
+            // 
+            // pboSetorTres
+            // 
+            this.pboSetorTres.BackgroundImage = global::kingme.Properties.Resources.setor3;
+            this.pboSetorTres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pboSetorTres.Location = new System.Drawing.Point(449, 447);
+            this.pboSetorTres.Name = "pboSetorTres";
+            this.pboSetorTres.Size = new System.Drawing.Size(406, 141);
+            this.pboSetorTres.TabIndex = 70;
+            this.pboSetorTres.TabStop = false;
+            // 
+            // pboSetorQuatro
+            // 
+            this.pboSetorQuatro.BackgroundImage = global::kingme.Properties.Resources.setor4;
+            this.pboSetorQuatro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pboSetorQuatro.Location = new System.Drawing.Point(449, 306);
+            this.pboSetorQuatro.Name = "pboSetorQuatro";
+            this.pboSetorQuatro.Size = new System.Drawing.Size(406, 141);
+            this.pboSetorQuatro.TabIndex = 69;
+            this.pboSetorQuatro.TabStop = false;
+            // 
+            // pboSetorDez
+            // 
+            this.pboSetorDez.BackgroundImage = global::kingme.Properties.Resources.setor10;
+            this.pboSetorDez.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pboSetorDez.Location = new System.Drawing.Point(449, 24);
+            this.pboSetorDez.Name = "pboSetorDez";
+            this.pboSetorDez.Size = new System.Drawing.Size(406, 141);
+            this.pboSetorDez.TabIndex = 72;
+            this.pboSetorDez.TabStop = false;
             // 
             // Game
             // 
@@ -780,8 +846,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::kingme.Properties.Resources.texture1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1984, 1061);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1806, 1015);
+            this.Controls.Add(this.pboSetorDez);
+            this.Controls.Add(this.pboSetorCinco);
+            this.Controls.Add(this.pboSetorTres);
+            this.Controls.Add(this.pboSetorQuatro);
+            this.Controls.Add(this.pboSetorDois);
+            this.Controls.Add(this.pboSetorZero);
+            this.Controls.Add(this.pboSetorUm);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPlayerNameValue);
@@ -810,7 +882,7 @@
             this.Controls.Add(this.btnListCards);
             this.Controls.Add(this.txtPlayerId);
             this.Controls.Add(this.lblCardsTitle);
-            this.Controls.Add(this.lstFavorites);
+            this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -818,13 +890,19 @@
             this.Load += new System.EventHandler(this.Game_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorUm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorZero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorDois)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorCinco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorTres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorQuatro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboSetorDez)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ListBox lstFavorites;
         private System.Windows.Forms.Label lblCardsTitle;
         private System.Windows.Forms.Button btnListCards;
         private System.Windows.Forms.Label lblCardsContent;
@@ -879,6 +957,12 @@
         private System.Windows.Forms.RadioButton rdoAdilson;
         private System.Windows.Forms.RadioButton rdoHeredia;
         private System.Windows.Forms.RadioButton rdoDouglas;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pboSetorUm;
+        private System.Windows.Forms.PictureBox pboSetorZero;
+        private System.Windows.Forms.PictureBox pboSetorDois;
+        private System.Windows.Forms.PictureBox pboSetorCinco;
+        private System.Windows.Forms.PictureBox pboSetorTres;
+        private System.Windows.Forms.PictureBox pboSetorQuatro;
+        private System.Windows.Forms.PictureBox pboSetorDez;
     }
 }

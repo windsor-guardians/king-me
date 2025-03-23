@@ -173,5 +173,29 @@
   <ItemGroup>
     <None Include="Resources\tabuleiro1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setor0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setor2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setor21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setor3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setor4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setor5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setor10.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
