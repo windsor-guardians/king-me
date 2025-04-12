@@ -37,7 +37,6 @@ namespace kingme
                 lstMatches.Items.Add(matchListValidated[i]);
             }
         }
-
         private void btnListMatches_Click(object sender, EventArgs e)
         {
             listMatches();

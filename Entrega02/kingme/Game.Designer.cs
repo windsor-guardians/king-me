@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblCardsTitle = new System.Windows.Forms.Label();
             this.btnListCards = new System.Windows.Forms.Button();
             this.lblCardsContent = new System.Windows.Forms.Label();
@@ -58,21 +59,15 @@
             this.btnBeatrizPaiva = new System.Windows.Forms.Button();
             this.rdoBeatriz = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoRanulfo = new System.Windows.Forms.RadioButton();
-            this.rdoQuintas = new System.Windows.Forms.RadioButton();
-            this.rdoToshio = new System.Windows.Forms.RadioButton();
             this.rdoLeonardo = new System.Windows.Forms.RadioButton();
+            this.rdoKelly = new System.Windows.Forms.RadioButton();
             this.rdoGuilherme = new System.Windows.Forms.RadioButton();
             this.rdoEduardo = new System.Windows.Forms.RadioButton();
-            this.rdoKelly = new System.Windows.Forms.RadioButton();
-            this.rdoClaro = new System.Windows.Forms.RadioButton();
-            this.rdoAdilson = new System.Windows.Forms.RadioButton();
-            this.rdoHeredia = new System.Windows.Forms.RadioButton();
-            this.rdoDouglas = new System.Windows.Forms.RadioButton();
             this.rdoMario = new System.Windows.Forms.RadioButton();
-            this.btnRanulfo = new System.Windows.Forms.Button();
-            this.btnQuintas = new System.Windows.Forms.Button();
-            this.btnToshio = new System.Windows.Forms.Button();
+            this.rdoDouglas = new System.Windows.Forms.RadioButton();
+            this.rdoAdilson = new System.Windows.Forms.RadioButton();
+            this.rdoClaro = new System.Windows.Forms.RadioButton();
+            this.rdoHeredia = new System.Windows.Forms.RadioButton();
             this.btnLeonardo = new System.Windows.Forms.Button();
             this.btnKelly = new System.Windows.Forms.Button();
             this.btnGuilherme = new System.Windows.Forms.Button();
@@ -82,6 +77,12 @@
             this.btnHeredia = new System.Windows.Forms.Button();
             this.btnDouglas = new System.Windows.Forms.Button();
             this.btnMario = new System.Windows.Forms.Button();
+            this.rdoRanulfo = new System.Windows.Forms.RadioButton();
+            this.rdoQuintas = new System.Windows.Forms.RadioButton();
+            this.rdoToshio = new System.Windows.Forms.RadioButton();
+            this.btnToshio = new System.Windows.Forms.Button();
+            this.btnQuintas = new System.Windows.Forms.Button();
+            this.btnRanulfo = new System.Windows.Forms.Button();
             this.pboSetorUm = new System.Windows.Forms.PictureBox();
             this.pboSetorZero = new System.Windows.Forms.PictureBox();
             this.pboSetorDois = new System.Windows.Forms.PictureBox();
@@ -89,6 +90,8 @@
             this.pboSetorTres = new System.Windows.Forms.PictureBox();
             this.pboSetorQuatro = new System.Windows.Forms.PictureBox();
             this.pboSetorDez = new System.Windows.Forms.PictureBox();
+            this.btnPromote = new System.Windows.Forms.Button();
+            this.tmrAutomacao = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboSetorUm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboSetorZero)).BeginInit();
@@ -470,39 +473,6 @@
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             // 
-            // rdoRanulfo
-            // 
-            this.rdoRanulfo.AutoSize = true;
-            this.rdoRanulfo.BackColor = System.Drawing.Color.Transparent;
-            this.rdoRanulfo.Location = new System.Drawing.Point(106, 350);
-            this.rdoRanulfo.Name = "rdoRanulfo";
-            this.rdoRanulfo.Size = new System.Drawing.Size(14, 13);
-            this.rdoRanulfo.TabIndex = 87;
-            this.rdoRanulfo.TabStop = true;
-            this.rdoRanulfo.UseVisualStyleBackColor = false;
-            // 
-            // rdoQuintas
-            // 
-            this.rdoQuintas.AutoSize = true;
-            this.rdoQuintas.BackColor = System.Drawing.Color.Transparent;
-            this.rdoQuintas.Location = new System.Drawing.Point(751, 190);
-            this.rdoQuintas.Name = "rdoQuintas";
-            this.rdoQuintas.Size = new System.Drawing.Size(14, 13);
-            this.rdoQuintas.TabIndex = 86;
-            this.rdoQuintas.TabStop = true;
-            this.rdoQuintas.UseVisualStyleBackColor = false;
-            // 
-            // rdoToshio
-            // 
-            this.rdoToshio.AutoSize = true;
-            this.rdoToshio.BackColor = System.Drawing.Color.Transparent;
-            this.rdoToshio.Location = new System.Drawing.Point(635, 190);
-            this.rdoToshio.Name = "rdoToshio";
-            this.rdoToshio.Size = new System.Drawing.Size(14, 13);
-            this.rdoToshio.TabIndex = 85;
-            this.rdoToshio.TabStop = true;
-            this.rdoToshio.UseVisualStyleBackColor = false;
-            // 
             // rdoLeonardo
             // 
             this.rdoLeonardo.AutoSize = true;
@@ -513,6 +483,17 @@
             this.rdoLeonardo.TabIndex = 84;
             this.rdoLeonardo.TabStop = true;
             this.rdoLeonardo.UseVisualStyleBackColor = false;
+            // 
+            // rdoKelly
+            // 
+            this.rdoKelly.AutoSize = true;
+            this.rdoKelly.BackColor = System.Drawing.Color.Transparent;
+            this.rdoKelly.Location = new System.Drawing.Point(382, 190);
+            this.rdoKelly.Name = "rdoKelly";
+            this.rdoKelly.Size = new System.Drawing.Size(14, 13);
+            this.rdoKelly.TabIndex = 82;
+            this.rdoKelly.TabStop = true;
+            this.rdoKelly.UseVisualStyleBackColor = false;
             // 
             // rdoGuilherme
             // 
@@ -536,49 +517,16 @@
             this.rdoEduardo.TabStop = true;
             this.rdoEduardo.UseVisualStyleBackColor = false;
             // 
-            // rdoKelly
+            // rdoMario
             // 
-            this.rdoKelly.AutoSize = true;
-            this.rdoKelly.BackColor = System.Drawing.Color.Transparent;
-            this.rdoKelly.Location = new System.Drawing.Point(382, 190);
-            this.rdoKelly.Name = "rdoKelly";
-            this.rdoKelly.Size = new System.Drawing.Size(14, 13);
-            this.rdoKelly.TabIndex = 82;
-            this.rdoKelly.TabStop = true;
-            this.rdoKelly.UseVisualStyleBackColor = false;
-            // 
-            // rdoClaro
-            // 
-            this.rdoClaro.AutoSize = true;
-            this.rdoClaro.BackColor = System.Drawing.Color.Transparent;
-            this.rdoClaro.Location = new System.Drawing.Point(751, 25);
-            this.rdoClaro.Name = "rdoClaro";
-            this.rdoClaro.Size = new System.Drawing.Size(14, 13);
-            this.rdoClaro.TabIndex = 81;
-            this.rdoClaro.TabStop = true;
-            this.rdoClaro.UseVisualStyleBackColor = false;
-            // 
-            // rdoAdilson
-            // 
-            this.rdoAdilson.AutoSize = true;
-            this.rdoAdilson.BackColor = System.Drawing.Color.Transparent;
-            this.rdoAdilson.Location = new System.Drawing.Point(635, 25);
-            this.rdoAdilson.Name = "rdoAdilson";
-            this.rdoAdilson.Size = new System.Drawing.Size(14, 13);
-            this.rdoAdilson.TabIndex = 80;
-            this.rdoAdilson.TabStop = true;
-            this.rdoAdilson.UseVisualStyleBackColor = false;
-            // 
-            // rdoHeredia
-            // 
-            this.rdoHeredia.AutoSize = true;
-            this.rdoHeredia.BackColor = System.Drawing.Color.Transparent;
-            this.rdoHeredia.Location = new System.Drawing.Point(514, 25);
-            this.rdoHeredia.Name = "rdoHeredia";
-            this.rdoHeredia.Size = new System.Drawing.Size(14, 13);
-            this.rdoHeredia.TabIndex = 79;
-            this.rdoHeredia.TabStop = true;
-            this.rdoHeredia.UseVisualStyleBackColor = false;
+            this.rdoMario.AutoSize = true;
+            this.rdoMario.BackColor = System.Drawing.Color.Transparent;
+            this.rdoMario.Location = new System.Drawing.Point(249, 25);
+            this.rdoMario.Name = "rdoMario";
+            this.rdoMario.Size = new System.Drawing.Size(14, 13);
+            this.rdoMario.TabIndex = 77;
+            this.rdoMario.TabStop = true;
+            this.rdoMario.UseVisualStyleBackColor = false;
             // 
             // rdoDouglas
             // 
@@ -591,58 +539,38 @@
             this.rdoDouglas.TabStop = true;
             this.rdoDouglas.UseVisualStyleBackColor = false;
             // 
-            // rdoMario
+            // rdoAdilson
             // 
-            this.rdoMario.AutoSize = true;
-            this.rdoMario.BackColor = System.Drawing.Color.Transparent;
-            this.rdoMario.Location = new System.Drawing.Point(249, 25);
-            this.rdoMario.Name = "rdoMario";
-            this.rdoMario.Size = new System.Drawing.Size(14, 13);
-            this.rdoMario.TabIndex = 77;
-            this.rdoMario.TabStop = true;
-            this.rdoMario.UseVisualStyleBackColor = false;
+            this.rdoAdilson.AutoSize = true;
+            this.rdoAdilson.BackColor = System.Drawing.Color.Transparent;
+            this.rdoAdilson.Location = new System.Drawing.Point(635, 25);
+            this.rdoAdilson.Name = "rdoAdilson";
+            this.rdoAdilson.Size = new System.Drawing.Size(14, 13);
+            this.rdoAdilson.TabIndex = 80;
+            this.rdoAdilson.TabStop = true;
+            this.rdoAdilson.UseVisualStyleBackColor = false;
             // 
-            // btnRanulfo
+            // rdoClaro
             // 
-            this.btnRanulfo.BackColor = System.Drawing.Color.Transparent;
-            this.btnRanulfo.BackgroundImage = global::kingme.Properties.Resources.ranulfo;
-            this.btnRanulfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnRanulfo.FlatAppearance.BorderSize = 0;
-            this.btnRanulfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRanulfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRanulfo.Location = new System.Drawing.Point(22, 350);
-            this.btnRanulfo.Name = "btnRanulfo";
-            this.btnRanulfo.Size = new System.Drawing.Size(98, 139);
-            this.btnRanulfo.TabIndex = 76;
-            this.btnRanulfo.UseVisualStyleBackColor = false;
+            this.rdoClaro.AutoSize = true;
+            this.rdoClaro.BackColor = System.Drawing.Color.Transparent;
+            this.rdoClaro.Location = new System.Drawing.Point(751, 25);
+            this.rdoClaro.Name = "rdoClaro";
+            this.rdoClaro.Size = new System.Drawing.Size(14, 13);
+            this.rdoClaro.TabIndex = 81;
+            this.rdoClaro.TabStop = true;
+            this.rdoClaro.UseVisualStyleBackColor = false;
             // 
-            // btnQuintas
+            // rdoHeredia
             // 
-            this.btnQuintas.BackColor = System.Drawing.Color.Transparent;
-            this.btnQuintas.BackgroundImage = global::kingme.Properties.Resources.quintas;
-            this.btnQuintas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnQuintas.FlatAppearance.BorderSize = 0;
-            this.btnQuintas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnQuintas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuintas.Location = new System.Drawing.Point(667, 190);
-            this.btnQuintas.Name = "btnQuintas";
-            this.btnQuintas.Size = new System.Drawing.Size(98, 139);
-            this.btnQuintas.TabIndex = 75;
-            this.btnQuintas.UseVisualStyleBackColor = false;
-            // 
-            // btnToshio
-            // 
-            this.btnToshio.BackColor = System.Drawing.Color.Transparent;
-            this.btnToshio.BackgroundImage = global::kingme.Properties.Resources.toshio;
-            this.btnToshio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnToshio.FlatAppearance.BorderSize = 0;
-            this.btnToshio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnToshio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnToshio.Location = new System.Drawing.Point(551, 190);
-            this.btnToshio.Name = "btnToshio";
-            this.btnToshio.Size = new System.Drawing.Size(98, 139);
-            this.btnToshio.TabIndex = 74;
-            this.btnToshio.UseVisualStyleBackColor = false;
+            this.rdoHeredia.AutoSize = true;
+            this.rdoHeredia.BackColor = System.Drawing.Color.Transparent;
+            this.rdoHeredia.Location = new System.Drawing.Point(514, 25);
+            this.rdoHeredia.Name = "rdoHeredia";
+            this.rdoHeredia.Size = new System.Drawing.Size(14, 13);
+            this.rdoHeredia.TabIndex = 79;
+            this.rdoHeredia.TabStop = true;
+            this.rdoHeredia.UseVisualStyleBackColor = false;
             // 
             // btnLeonardo
             // 
@@ -717,7 +645,7 @@
             // btnAdilson
             // 
             this.btnAdilson.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdilson.BackgroundImage = global::kingme.Properties.Resources.adilson;
+            this.btnAdilson.BackgroundImage = global::kingme.Properties.Resources.Sem_titulo_4;
             this.btnAdilson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAdilson.FlatAppearance.BorderSize = 0;
             this.btnAdilson.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -770,6 +698,81 @@
             this.btnMario.TabIndex = 65;
             this.btnMario.UseVisualStyleBackColor = false;
             // 
+            // rdoRanulfo
+            // 
+            this.rdoRanulfo.AutoSize = true;
+            this.rdoRanulfo.BackColor = System.Drawing.Color.Transparent;
+            this.rdoRanulfo.Location = new System.Drawing.Point(106, 350);
+            this.rdoRanulfo.Name = "rdoRanulfo";
+            this.rdoRanulfo.Size = new System.Drawing.Size(14, 13);
+            this.rdoRanulfo.TabIndex = 87;
+            this.rdoRanulfo.TabStop = true;
+            this.rdoRanulfo.UseVisualStyleBackColor = false;
+            // 
+            // rdoQuintas
+            // 
+            this.rdoQuintas.AutoSize = true;
+            this.rdoQuintas.BackColor = System.Drawing.Color.Transparent;
+            this.rdoQuintas.Location = new System.Drawing.Point(751, 190);
+            this.rdoQuintas.Name = "rdoQuintas";
+            this.rdoQuintas.Size = new System.Drawing.Size(14, 13);
+            this.rdoQuintas.TabIndex = 86;
+            this.rdoQuintas.TabStop = true;
+            this.rdoQuintas.UseVisualStyleBackColor = false;
+            // 
+            // rdoToshio
+            // 
+            this.rdoToshio.AutoSize = true;
+            this.rdoToshio.BackColor = System.Drawing.Color.Transparent;
+            this.rdoToshio.Location = new System.Drawing.Point(635, 190);
+            this.rdoToshio.Name = "rdoToshio";
+            this.rdoToshio.Size = new System.Drawing.Size(14, 13);
+            this.rdoToshio.TabIndex = 85;
+            this.rdoToshio.TabStop = true;
+            this.rdoToshio.UseVisualStyleBackColor = false;
+            // 
+            // btnToshio
+            // 
+            this.btnToshio.BackColor = System.Drawing.Color.Transparent;
+            this.btnToshio.BackgroundImage = global::kingme.Properties.Resources.toshio;
+            this.btnToshio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnToshio.FlatAppearance.BorderSize = 0;
+            this.btnToshio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnToshio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnToshio.Location = new System.Drawing.Point(551, 190);
+            this.btnToshio.Name = "btnToshio";
+            this.btnToshio.Size = new System.Drawing.Size(98, 139);
+            this.btnToshio.TabIndex = 74;
+            this.btnToshio.UseVisualStyleBackColor = false;
+            // 
+            // btnQuintas
+            // 
+            this.btnQuintas.BackColor = System.Drawing.Color.Transparent;
+            this.btnQuintas.BackgroundImage = global::kingme.Properties.Resources.quintas;
+            this.btnQuintas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnQuintas.FlatAppearance.BorderSize = 0;
+            this.btnQuintas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnQuintas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuintas.Location = new System.Drawing.Point(667, 190);
+            this.btnQuintas.Name = "btnQuintas";
+            this.btnQuintas.Size = new System.Drawing.Size(98, 139);
+            this.btnQuintas.TabIndex = 75;
+            this.btnQuintas.UseVisualStyleBackColor = false;
+            // 
+            // btnRanulfo
+            // 
+            this.btnRanulfo.BackColor = System.Drawing.Color.Transparent;
+            this.btnRanulfo.BackgroundImage = global::kingme.Properties.Resources.ranulfo;
+            this.btnRanulfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRanulfo.FlatAppearance.BorderSize = 0;
+            this.btnRanulfo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRanulfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRanulfo.Location = new System.Drawing.Point(22, 350);
+            this.btnRanulfo.Name = "btnRanulfo";
+            this.btnRanulfo.Size = new System.Drawing.Size(98, 139);
+            this.btnRanulfo.TabIndex = 76;
+            this.btnRanulfo.UseVisualStyleBackColor = false;
+            // 
             // pboSetorUm
             // 
             this.pboSetorUm.BackgroundImage = global::kingme.Properties.Resources.setor1;
@@ -786,7 +789,7 @@
             this.pboSetorZero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pboSetorZero.Location = new System.Drawing.Point(449, 870);
             this.pboSetorZero.Name = "pboSetorZero";
-            this.pboSetorZero.Size = new System.Drawing.Size(406, 125);
+            this.pboSetorZero.Size = new System.Drawing.Size(406, 133);
             this.pboSetorZero.TabIndex = 67;
             this.pboSetorZero.TabStop = false;
             // 
@@ -840,6 +843,25 @@
             this.pboSetorDez.TabIndex = 72;
             this.pboSetorDez.TabStop = false;
             // 
+            // btnPromote
+            // 
+            this.btnPromote.BackColor = System.Drawing.Color.Black;
+            this.btnPromote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPromote.Font = new System.Drawing.Font("Old London Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPromote.ForeColor = System.Drawing.Color.White;
+            this.btnPromote.Location = new System.Drawing.Point(1641, 697);
+            this.btnPromote.Name = "btnPromote";
+            this.btnPromote.Size = new System.Drawing.Size(108, 32);
+            this.btnPromote.TabIndex = 73;
+            this.btnPromote.Text = "Promover";
+            this.btnPromote.UseVisualStyleBackColor = false;
+            this.btnPromote.Click += new System.EventHandler(this.btnPromote_Click);
+            // 
+            // tmrAutomacao
+            // 
+            this.tmrAutomacao.Interval = 5000;
+            this.tmrAutomacao.Tick += new System.EventHandler(this.tmrAutomacao_Tick);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -847,6 +869,7 @@
             this.BackgroundImage = global::kingme.Properties.Resources.texture1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1806, 1015);
+            this.Controls.Add(this.btnPromote);
             this.Controls.Add(this.pboSetorDez);
             this.Controls.Add(this.pboSetorCinco);
             this.Controls.Add(this.pboSetorTres);
@@ -964,5 +987,7 @@
         private System.Windows.Forms.PictureBox pboSetorTres;
         private System.Windows.Forms.PictureBox pboSetorQuatro;
         private System.Windows.Forms.PictureBox pboSetorDez;
+        private System.Windows.Forms.Button btnPromote;
+        private System.Windows.Forms.Timer tmrAutomacao;
     }
 }

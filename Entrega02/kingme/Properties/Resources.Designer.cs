@@ -223,6 +223,16 @@ namespace kingme.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sem_titulo_4 {
+            get {
+                object obj = ResourceManager.GetObject("Sem_titulo-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap setor0 {
             get {
                 object obj = ResourceManager.GetObject("setor0", resourceCulture);
