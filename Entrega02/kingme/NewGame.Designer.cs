@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCreateNewMatch = new System.Windows.Forms.Button();
-            this.txtGroupNameMatch = new System.Windows.Forms.TextBox();
-            this.lblGroupNameMatch = new System.Windows.Forms.Label();
             this.txtPasswordMatch = new System.Windows.Forms.TextBox();
             this.lblPasswordMatch = new System.Windows.Forms.Label();
             this.txtMatchName = new System.Windows.Forms.TextBox();
@@ -50,32 +48,13 @@
             this.btnCreateNewMatch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreateNewMatch.Font = new System.Drawing.Font("Old English Text MT", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnCreateNewMatch.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCreateNewMatch.Location = new System.Drawing.Point(434, 345);
+            this.btnCreateNewMatch.Location = new System.Drawing.Point(434, 292);
             this.btnCreateNewMatch.Name = "btnCreateNewMatch";
             this.btnCreateNewMatch.Size = new System.Drawing.Size(210, 35);
             this.btnCreateNewMatch.TabIndex = 23;
             this.btnCreateNewMatch.Text = "Criar partida";
             this.btnCreateNewMatch.UseVisualStyleBackColor = false;
             this.btnCreateNewMatch.Click += new System.EventHandler(this.btnCreateNewMatch_Click);
-            // 
-            // txtGroupNameMatch
-            // 
-            this.txtGroupNameMatch.Location = new System.Drawing.Point(434, 298);
-            this.txtGroupNameMatch.Name = "txtGroupNameMatch";
-            this.txtGroupNameMatch.Size = new System.Drawing.Size(210, 20);
-            this.txtGroupNameMatch.TabIndex = 22;
-            // 
-            // lblGroupNameMatch
-            // 
-            this.lblGroupNameMatch.AutoSize = true;
-            this.lblGroupNameMatch.BackColor = System.Drawing.Color.Transparent;
-            this.lblGroupNameMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroupNameMatch.ForeColor = System.Drawing.Color.Black;
-            this.lblGroupNameMatch.Location = new System.Drawing.Point(431, 279);
-            this.lblGroupNameMatch.Name = "lblGroupNameMatch";
-            this.lblGroupNameMatch.Size = new System.Drawing.Size(97, 13);
-            this.lblGroupNameMatch.TabIndex = 21;
-            this.lblGroupNameMatch.Text = "Nome do grupo:";
             // 
             // txtPasswordMatch
             // 
@@ -207,8 +186,6 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCreateNewMatch);
-            this.Controls.Add(this.txtGroupNameMatch);
-            this.Controls.Add(this.lblGroupNameMatch);
             this.Controls.Add(this.txtPasswordMatch);
             this.Controls.Add(this.lblPasswordMatch);
             this.Controls.Add(this.txtMatchName);
@@ -227,8 +204,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnCreateNewMatch;
-        private System.Windows.Forms.TextBox txtGroupNameMatch;
-        private System.Windows.Forms.Label lblGroupNameMatch;
         private System.Windows.Forms.TextBox txtPasswordMatch;
         private System.Windows.Forms.Label lblPasswordMatch;
         private System.Windows.Forms.TextBox txtMatchName;

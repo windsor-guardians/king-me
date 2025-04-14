@@ -274,7 +274,6 @@
             this.lstMatchPlayers.Name = "lstMatchPlayers";
             this.lstMatchPlayers.Size = new System.Drawing.Size(173, 199);
             this.lstMatchPlayers.TabIndex = 36;
-            this.lstMatchPlayers.SelectedIndexChanged += new System.EventHandler(this.lstMatchPlayers_SelectedIndexChanged);
             // 
             // btnInitializeMatch
             // 

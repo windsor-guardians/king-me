@@ -14,7 +14,6 @@ namespace kingme
 {
     public partial class Menu: Form
     {
-        Player player = new Player();
         ErrorHandler errorHandler = new ErrorHandler();
         public Menu()
         {
@@ -24,36 +23,48 @@ namespace kingme
 
         private void btnMatches_Click(object sender, EventArgs e)
         {
-            Lobby lobby = new Lobby();
-            lobby.ShowDialog();
+            using (Lobby lobby = new Lobby())
+            {
+                if (lobby.ShowDialog() == DialogResult.OK)
+                {
+                    string matchContent = lobby.SelectedItem;
+                    string[] matchContentList = matchContent.Split(',');
+                    txtIdMatch.Text = matchContentList[0];
+                }
+            }
         }
 
         private void btnNewGame_Click_1(object sender, EventArgs e)
         {
-            NewGame game = new NewGame();
-            game.ShowDialog();
+            clearFields();
+            using (NewGame game = new NewGame())
+            {
+                if (game.ShowDialog() == DialogResult.OK)
+                {
+                    txtIdMatch.Text = game.matchId;
+                    txtPasswordCurrentMatch.Text = game.matchPassword;
+                }
+            }
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
             string matchId = txtIdMatch.Text;
             string playerName = txtPlayerName.Text;
-            string passCurrentMatch = txtPasswordCurrentMatch.Text;
+            string matchPassword = txtPasswordCurrentMatch.Text;
 
             if (errorHandler.IsFieldBlank("Id da partida", matchId) || 
                 errorHandler.IsFieldBlank("Nome do jogador", playerName) ||
-                errorHandler.IsFieldBlank("Senha da partida", passCurrentMatch) ||
+                errorHandler.IsFieldBlank("Senha da partida", matchPassword) ||
                 errorHandler.IsFieldContainsSpecialCharacters("Id da partida", matchId))
             {
-                clearFields();
                 return;
             }
 
-            string credentials = Jogo.Entrar(Convert.ToInt32(matchId), playerName, passCurrentMatch);
+            string credentials = Jogo.Entrar(Convert.ToInt32(matchId), playerName, matchPassword);
 
-            if (errorHandler.IsGameMethodReturnError(credentials))
+            if (errorHandler.checkForError(credentials))
             {
-                clearFields();
                 return;
             }
 
@@ -61,13 +72,10 @@ namespace kingme
             credentials = credentials.Substring(0, credentials.Length);
             string[] matchListSanitized = credentials.Split(',');
 
-            player.Id = Convert.ToInt32(matchListSanitized[0]);
-            player.Password = matchListSanitized[1];
+            int playerId = Convert.ToInt32(matchListSanitized[0]);
+            string playerPassword = matchListSanitized[1];
 
-            Game game = new Game();
-            game.playerId = player.Id.ToString();
-            game.playerPass = player.Password;
-            game.matchId = txtIdMatch.Text;
+            Game game = new Game(playerId, playerName, playerPassword, Convert.ToInt32(txtIdMatch.Text), matchPassword);
 
             game.updateGameContent();
             game.ShowDialog();

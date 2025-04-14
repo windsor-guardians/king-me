@@ -20,20 +20,27 @@ namespace kingme
         public string playerId { get; set; }
         public string playerPass { get; set; }
         public string matchId { get; set; }
-        private string[] matchPlayersList { get; set; }
         private string[] characterList { get; set; }
         private string[] avaliableCharacters { get; set; }
-
         private int[] sectorsList { get; set; }
-        private string currentState { get; set; }
 
+        Match match = new Match();
         Player player = new Player();
-        public Game()
+        ErrorHandler errorHandler = new ErrorHandler();
+
+        public Game(int playerId, string playerName, string playerPassword, int matchId, string matchPassword)
         {
             InitializeComponent();
             lblVersion.Text = Jogo.versao;
+            
+            match.SetId(matchId);
+            match.SetPassword(matchPassword);
 
-           this.characterList = new string[]{
+            player.SetId(playerId);
+            player.SetName(playerName);
+            player.SetPassword(playerPassword);
+
+            this.characterList = new string[]{
                 "Adilson Konrad",
                 "Beatriz Paiva",
                 "Claro",
@@ -79,8 +86,8 @@ namespace kingme
 
         public void updateGameContent()
         {
-            txtPlayerId.Text = playerId;
-            txtPlayerPassword.Text = playerPass;
+            txtPlayerId.Text = player.GetId().ToString();
+            txtPlayerPassword.Text = player.GetPassword();
         }
 
         private void Game_Load(object sender, EventArgs e)
@@ -89,72 +96,24 @@ namespace kingme
 
         private void btnInitializeMatch_Click(object sender, EventArgs e)
         {
-            int playerId = Convert.ToInt32(this.playerId);
-            string playerPassword = playerPass;
+            int playerId = player.GetId();
+            string playerPassword = player.GetPassword();
 
-            if (!initializeMatchValidations(playerId.ToString(), playerPassword)) 
-            {
-                return;
-            }
-
-            string inicio = Jogo.Iniciar(playerId, playerPassword);
-
-            if (errorPopUpGenerate(inicio))
-            {
-                return;
-            }
 
             MessageBox.Show("A partida foi iniciada!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.currentState = "S";
-        }
-
-        private void lstMatchPlayers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        public bool initializeMatchValidations(string playerId, string playerPassword)
-        {
-            var validations = new[]
-            {
-             new Tuple<string, string>(playerId, "O id do jogador não pode ser vazio"),
-             new Tuple<string, string>(playerPassword, "A senha do jogador não pode ser vazia"),
-            };
-
-            foreach (var entry in validations)
-            {
-                if (string.IsNullOrWhiteSpace(entry.Item1))
-                {
-                    MessageBox.Show(entry.Item2, "Bad Request", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-
-            }
-            return true;
-        }
-
-        private void getListOfPlayers()
-        {
-            string matchPlayersContent = Jogo.ListarJogadores(Convert.ToInt32(this.matchId));
-
-            matchPlayersContent = matchPlayersContent.Replace("\r", "");
-            this.matchPlayersList = matchPlayersContent.Split('\n');  
+            player.initializeGame();
+            automateVerifyTurn();
         }
 
         private void updatePlayerList()
         {
-            getListOfPlayers();
+            List <string> players = match.GetPlayers(match.GetId());
             lstMatchPlayers.Items.Clear();
 
-            if (this.matchPlayersList[0] == "")
+            for (int i = 0; i < players.Count; i++)
             {
-                MessageBox.Show("Sem jogadores na partida", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            for (int i = 0; i < matchPlayersList.Length; i++)
-            {
-                string player = matchPlayersList[i];
-                lstMatchPlayers.Items.Add(matchPlayersList[i]);
+                string player = players[i];
+                lstMatchPlayers.Items.Add(player);
             }
         }
 
@@ -165,40 +124,21 @@ namespace kingme
 
         private void btnListCards_Click(object sender, EventArgs e)
         {
-            // string playerCards = listPlayerCards();
-            // if (playerCards.Contains("Error"))
-            // {
-            //  return;
-            // }
-
             listPlayerCards(); 
         }
-
-        public bool errorPopUpGenerate(string content)
-        {
-            if (content.Contains("ERRO"))
-            {
-                string errorMessage = content.Substring(5);
-                //MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
-            }
-
-            return false;
-        }
-
 
         private void btnLeave_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private string listPlayerCards()
+        private void listPlayerCards()
         {
-            string playerCards = Jogo.ListarCartas(Convert.ToInt32(playerId), playerPass);
+            string playerCards = player.GetCards();
 
-            if (errorPopUpGenerate(playerCards))
+            if (String.IsNullOrEmpty(playerCards))
             {
-                return "Error";
+                return;
             }
 
             char[] listPlayerCards = playerCards.ToCharArray();
@@ -215,7 +155,7 @@ namespace kingme
                 }
             }
 
-            return "Cartas listadas";
+            return;
         }
 
         private void btnSetCharacter_Click(object sender, EventArgs e)
@@ -232,7 +172,7 @@ namespace kingme
 
             string setCharacter = Jogo.ColocarPersonagem(Convert.ToInt32(this.playerId), this.playerPass, Convert.ToInt32(section), characterInitialLetter);
 
-            if (errorPopUpGenerate(setCharacter))
+            if (errorHandler.checkForError(setCharacter))
             {
                 return;
             }
@@ -246,8 +186,8 @@ namespace kingme
 
         public void automateVerifyTurn()
         {
-            string turn = Jogo.VerificarVez(Convert.ToInt32(this.matchId));
-            if (errorPopUpGenerate(turn))
+            string turn = Jogo.VerificarVez(match.GetId());
+            if (errorHandler.checkForError(turn))
             {
                 return;
             }
@@ -257,16 +197,17 @@ namespace kingme
 
             string currentTurnPlayer = turnStateList[0];
             string[] currentTurnPlayerContent = currentTurnPlayer.Split(',');
-            getListOfPlayers();
 
             for (int i = 0; i < turnStateList.Length; i++)
             {
                 string currentTurn = turnStateList[i];
             }
 
-            for (int i = 0; i < this.matchPlayersList.Length - 1; i++)
+            List <string> players = match.GetPlayers(match.GetId());
+
+            for (int i = 0; i < players.Count - 1; i++)
             {
-                string player = this.matchPlayersList[i];
+                string player = players[i];
                 string[] playerContent = player.Split(',');
 
                 if (playerContent[0] == currentTurnPlayerContent[0])
@@ -523,19 +464,20 @@ namespace kingme
 
         private void verifyTurn()
         {
-            string gameState = Jogo.VerificarVez(Convert.ToInt32(this.matchId));
-            gameState = gameState.Replace("\r", "");
-            string[] gameStateList = gameState.Split('\n');
-            automateVerifyTurn();
+            string gameState = Jogo.VerificarVez(match.GetId());
 
-            if (errorPopUpGenerate(gameState))
+            if (errorHandler.checkForErrorAutomate(gameState))
             {
                 return;
             }
 
+            gameState = gameState.Replace("\r", "");
+            string[] gameStateList = gameState.Split('\n');
+            automateVerifyTurn();
+
             string[] turn = getCurrentGameTurn(gameStateList);
             string turnPlayerId = turn[0];
-            string playerId = this.playerId;
+            string playerId = player.GetId().ToString();
             if (turnPlayerId == playerId)
             {
                 string phase = turn[turn.Length - 1].ToUpper();
@@ -549,7 +491,7 @@ namespace kingme
                     }
 
                     string characterInitialLetter = this.avaliableCharacters[0].Substring(0, 1);
-                    string setCharacter = Jogo.ColocarPersonagem(Convert.ToInt32(this.playerId), this.playerPass, this.sectorsList[0], characterInitialLetter);
+                    string setCharacter = Jogo.ColocarPersonagem(player.GetId(), player.GetPassword(), this.sectorsList[0], characterInitialLetter);
 
                     automateVerifyTurn();
                 }

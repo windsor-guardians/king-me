@@ -14,6 +14,7 @@ namespace kingme
 {
     public partial class Lobby: Form
     {
+        public string SelectedItem { get; private set; }
         ErrorHandler errorHandler = new ErrorHandler();
         public Lobby()
         {
@@ -25,7 +26,7 @@ namespace kingme
         private void listMatches()
         {
             string matchList = Jogo.ListarPartidas("T");
-            if (errorHandler.IsGameMethodReturnError(matchList))
+            if (errorHandler.checkForError(matchList))
             {
                 return;
             }
@@ -45,6 +46,13 @@ namespace kingme
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lstMatches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedItem = lstMatches.SelectedItem.ToString();
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }

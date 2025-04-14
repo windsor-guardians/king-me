@@ -14,6 +14,8 @@ namespace kingme
 {
     public partial class NewGame: Form
     {
+        public string matchId { get; private set; }
+        public string matchPassword { get; private set; }
         ErrorHandler errorHandler = new ErrorHandler();
         public NewGame()
         {
@@ -23,32 +25,35 @@ namespace kingme
 
         private void btnCreateNewMatch_Click(object sender, EventArgs e)
         {
+            string groupName = "Guardiões de Windsor";
             string newMatchName = txtMatchName.Text.Trim();
-            string matchPassword = txtPasswordMatch.Text.Trim();
-            string matchGroupName = txtGroupNameMatch.Text.Trim();
+            string newMatchPassword = txtPasswordMatch.Text.Trim();
             
             if (errorHandler.IsFieldBlank("Nome da partida", newMatchName) ||
-                errorHandler.IsFieldBlank("Senha", newMatchName) || 
-                errorHandler.IsFieldBlank("Nome do grupo", newMatchName))
+                errorHandler.IsFieldBlank("Senha", newMatchPassword))
             {
                 return;
             }
 
-            string id = Jogo.CriarPartida(newMatchName, matchPassword, matchGroupName);
+            string id = Jogo.CriarPartida(newMatchName, newMatchPassword, groupName);
 
-            if (errorHandler.IsGameMethodReturnError(id))
+            if (errorHandler.checkForError(id))
             {
                 return;
             }
             
             string matchCreatedMessage = "A partida de id " + id + " foi criada com sucesso!";
             MessageBox.Show(matchCreatedMessage, "Partida criada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            matchId = id;
+            matchPassword = newMatchPassword;
+            DialogResult = DialogResult.OK;
             cleanFields();
+            Close();
         }
 
         private void cleanFields()
         {
-            txtGroupNameMatch.Clear();
             txtMatchName.Clear();
             txtPasswordMatch.Clear();
         }

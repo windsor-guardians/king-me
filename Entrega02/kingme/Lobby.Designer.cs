@@ -59,6 +59,8 @@
             this.lstMatches.Name = "lstMatches";
             this.lstMatches.Size = new System.Drawing.Size(283, 316);
             this.lstMatches.TabIndex = 4;
+            this.lstMatches.SelectedIndexChanged += new System.EventHandler(this.lstMatches_SelectedIndexChanged);
+            // 
             // lstMatchesTitle
             // 
             this.lstMatchesTitle.AutoSize = true;
